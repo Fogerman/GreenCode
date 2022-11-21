@@ -1,0 +1,121 @@
+<!--
+ * @Author: Fogerman 96401539+Fogerman@users.noreply.github.com
+ * @Date: 2022-11-20 16:51:22
+ * @LastEditors: Fogerman 96401539+Fogerman@users.noreply.github.com
+ * @LastEditTime: 2022-11-21 20:20:56
+ * @FilePath: \作业三四\out.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Fogerman 96401539+Fogerman@users.noreply.github.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .titlebox{
+            margin:0 auto;
+            width: 250px;
+            height: 70px;
+            font-size: 20pt;
+            text-align: center;
+        }
+        .infolist{
+            margin: 0 auto;
+            height: 30pt;
+            width: 210pt;
+            font-size: 13pt;
+            text-align: left;
+        }
+        #clock{
+            margin:100px auto;
+            border: 5px double green;
+            width: 400px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font: bold;
+            color: red;
+            }
+    </style>
+</head>
+<body>
+    <p class="titlebox"><b>校内学生出校申请</b></p>
+    <div class="showTime"></div>
+    <script>
+    var t = null;
+    t = setTimeout(time, 1000); //開始运行
+    function time() {
+        clearTimeout(t); //清除定时器
+        dt = new Date();
+        var y = dt.getFullYear();
+        var mt = dt.getMonth() + 1;
+        var day = dt.getDate();
+        var h = dt.getHours(); //获取时
+        var m = dt.getMinutes(); //获取分
+        var s = dt.getSeconds(); //获取秒
+        
+        document.querySelector(".showTime").innerHTML = '<b><font style="font-size: 18pt;"><center>'+y + "/" + mt +"/" +day +" " 
+            + h +":"+((m<10)?"0":"")+m+":" +((s<10)?"0":"")+s+'</center></font></b>';
+        t = setTimeout(time, 1000); //设定定时器，循环运行
+        
+    }
+    </script>
+    <script>
+        now = new Date();
+        var year = now.getFullYear();
+        var month = now.getMonth() + 1;
+        var day = now.getDate();
+        var date = year+"-"+month+"-"+day
+    </script>
+
+    <p style="margin-top: 30pt;" class="infolist">
+        姓名<span style="color: red;">*</span>
+        &emsp;&emsp;&nbsp;&nbsp;&nbsp;张三
+    </p>
+    <p class="infolist">
+        学号<span style="color: red;">*</span>
+        &emsp;&emsp;&nbsp;&nbsp;&nbsp;20354001
+    </p>
+    <p class="infolist">
+        培养单位<span style="color: red;">*</span>
+        &emsp;智能工程学院
+    </p>
+    <p class="infolist">
+        出校时间<span style="color: red;">*</span>
+        &ensp;&nbsp;
+        <script>
+            document.write(date)
+        </script>
+    </p>
+    <p class="infolist">
+        返校时间<span style="color: red;">*</span>
+        &ensp;&nbsp;
+        <script>
+            document.write(date)
+        </script>
+    </p>
+    <p class="infolist" style="height: 20px;">
+        同行人信息
+        <table border="1" bordercolor="gray" align="center" 
+        cellspacing="0" cellpadding="0" style="font-size: 18px;">
+            <tr style="height: 30px;">
+                <td width="54px" style="text-align: center;">序号</td>
+                <td width="108px" style="text-align: center;">姓名</td>、
+                <td width="108px" style="text-align: center;">联系电话</td>
+            </tr>
+        </table>
+    </p>
+    <p class="infolist", style="text-align: center;width: 270px;">
+        <input type="checkbox" name="ball" value="" checked=""/>本人承诺以上填写内容均真实可靠。
+    </p>
+    <p>&ensp;</p>
+    <p>&ensp;</p>
+    <p class="infolist" style="margin: 0 auto;">
+        <img src="pass2.jpg" alt="aa" width="270px" >
+    </p>
+</body>
+</html>
